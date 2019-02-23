@@ -1,0 +1,11 @@
+name: upgrade software post check
+  hosts: oam,dbs,cpm
+  gather_facts: no
+  become: true
+  become_method: sudo
+  become_user: root
+  max_fail_percentage: 0
+  any_errors_fatal: True
+  roles:
+    - postcheck
+  tags: postcheck
